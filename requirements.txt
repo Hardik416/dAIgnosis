@@ -1,0 +1,14 @@
+# For building the AI agent and using Large Language Models (LLMs)
+langchain
+langchain-google-genai
+python-dotenv
+
+# For the user interface
+streamlit
+
+# For reading PDF files
+pypdf
+
+# For reading image files (Optical Character Recognition - OCR)
+pytesseract
+Pillow
