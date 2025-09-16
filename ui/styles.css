@@ -1,0 +1,220 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #E10098; /* Vibrant Pink/Magenta */
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+    --secondary-text-color: #a0a0b0;
+    --border-color: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header & Navigation --- */
+header {
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+    background: linear-gradient(90deg, var(--primary-color), yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 128px;
+    height: 128px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--secondary-text-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-top: -120px; /* Increased negative margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    padding-bottom: 0;
+    gap: 10px;
+    position: relative;
+    top: -80px; /* Increased negative top */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, var(--primary-color), aquamarine);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h1 .highlight {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: var(--secondary-text-color);
+    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    margin-top: 40px; /* Added 40px space between heading and paragraph */
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+    color: var(--background-color);
+}
+
+
+
+/* --- Responsive Design --- */
+/* For Tablets */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none; /* Hides the nav links on smaller screens. A real site would use a hamburger menu. */
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+    
+    nav {
+        flex-direction: row-reverse;
+        gap: 20px;
+    }
+    
+    .social-icons {
+        /* This ensures the social icons don't get hidden with the nav links on tablets */
+        display: flex; 
+    }
+
+    .hero {
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
